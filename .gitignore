@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Mm]emoryCaptures/
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
@@ -57,4 +57,17 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+
+#customize files ignore
+MultiplayerAtempt1_DapperDino_3/[Aa]ssets/SampleScenes/
+MultiplayerAtempt1_DapperDino_3/Assets/Standard Assets/
+MultiplayerAtempt1_DapperDino_3/Assets/OtherAssets/
+MultiplayerAtempt1_DapperDino_3/Assets/AssetStoreOriginals/
+MultiplayerAtempt1_DapperDino_3/Assets/FurnishedCabin/
+MultiplayerAtempt1_DapperDino_3/Assets/TextMesh Pro/
+
+MultiplayerAtempt1_DapperDino_3/Assets/Photon/PhotonVoice/Demos/
+MultiplayerAtempt1_DapperDino_3/Assets/Photon/PhotonUnityNetworking/Demos/
+MultiplayerAtempt1_DapperDino_3/Assets/Photon/PhotonChat/Demos/
+MultiplayerAtempt1_DapperDino_3/Assets/Photon/PhotonRealtime/Demos
 
