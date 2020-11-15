@@ -82,6 +82,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 audioListener.enabled=false;
                // m_AudioSource.enabled=false;
             }
+            // Cursor.visible = true; 
+            // Cursor.lockState = CursorLockMode.None;
+             Time.timeScale = 1;
             // edit ends
         }
 

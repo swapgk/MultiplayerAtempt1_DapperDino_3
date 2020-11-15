@@ -23,8 +23,9 @@ using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
 using UnityEngine;
+using PhotonTutorial.abc;
 
-using PhotonTutorial.Menus;
+//using PhotonTutorial.Menus;
 
 namespace PhotonTutorial.Menus
 {
@@ -35,6 +36,7 @@ namespace PhotonTutorial.Menus
         [SerializeField] private TextMeshProUGUI waitingStatusText = null;
 
         private bool isConnecting = false;
+        public bool Idisconnected=false;
 
         //private string room = "VRMeetup1";
          private string room;
@@ -52,17 +54,28 @@ namespace PhotonTutorial.Menus
 
         private void Awake() => PhotonNetwork.AutomaticallySyncScene = true;
 
+        void Start(){
+            Cursor.visible = true; 
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 1;
+
+
+        }
+
+        public void changeit(){
+             Idisconnected=true;
+
+        }
         public void FindOpponent()
         {
             isConnecting = true;
 
-            findOpponentPanel.SetActive(false);
-            waitingStatusPanel.SetActive(true);
+             findOpponentPanel.SetActive(false);
+             waitingStatusPanel.SetActive(true);
 
             waitingStatusText.text = "Searching...";
 
             
-
             if (PhotonNetwork.IsConnected)
             {
                 OnConnectedToMaster();
@@ -86,12 +99,16 @@ namespace PhotonTutorial.Menus
             Debug.Log("Connected to master!");
             Debug.Log("Joining room...");
 
+        ////////////////////////////////////////////cheap
+            // findOpponentPanel.SetActive(false);
+            // waitingStatusPanel.SetActive(false);
             //PhotonNetwork.JoinRandomRoom();
             room = RoomNameInput.roomName;
             PhotonNetwork.JoinRoom(room);
         
         }
 
+        // Original OnConnectedToMaster
         // public override void OnConnectedToMaster()
         // {
         //     Debug.Log("Connected To Master");
@@ -104,10 +121,11 @@ namespace PhotonTutorial.Menus
 
         public override void OnDisconnected(DisconnectCause cause)
         {
-            waitingStatusPanel.SetActive(false);
-            findOpponentPanel.SetActive(true);
-
+            
+            // waitingStatusPanel.SetActive(false);
+            // findOpponentPanel.SetActive(true);
             Debug.Log($"Disconnected due to: {cause}");
+            
         }
 
         public override void OnJoinRandomFailed(short returnCode, string message)
