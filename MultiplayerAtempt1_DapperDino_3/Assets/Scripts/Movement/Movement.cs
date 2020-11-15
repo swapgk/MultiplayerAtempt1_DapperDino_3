@@ -1,6 +1,7 @@
 ﻿using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
-
+using UnityEngine.UI;
 namespace PhotonTutorial.Movement
 {
     [RequireComponent(typeof(CharacterController))]

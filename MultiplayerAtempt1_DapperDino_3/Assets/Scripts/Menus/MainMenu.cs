@@ -44,9 +44,6 @@ namespace PhotonTutorial.Menus
         // }
         
 
-        
-        
-
          private bool m_createdRoom = false; 
         private const string GameVersion = "0.1";
         private const int MaxPlayersPerRoom = 3;
